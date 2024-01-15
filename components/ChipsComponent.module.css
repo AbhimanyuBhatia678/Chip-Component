@@ -1,0 +1,98 @@
+/* ChipsComponent.module.css */
+.wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.chipContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.chip {
+  background-color: #005eff;
+  color: white;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  border-radius: 16px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  height: 32px;
+}
+
+.chipHighlighted {
+  background-color: #e0f0ff;
+  border: 2px solid #007bff;
+}
+
+.chipButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  margin-left: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input {
+  flex-grow: 1;
+  min-width: 120px; /* Prevents the input from becoming too narrow when there are many chips */
+  border: none;
+  outline: none;
+  padding: 8px 0;
+}
+.emailText {
+  color: #999;
+  margin-left: 10px;
+}
+.suggestions {
+  position: absolute;
+  width: calc(100% - 16px); /* Adjust this value based on your padding in .chipsContainer */
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 8px;
+  z-index: 10;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-height: 300px; /* Set a maximum height */
+  overflow-y: auto; /* Enables scroll if the list is long */
+}
+.chipContainer:focus-within {
+    border-color: #007bff;
+  }
+  
+  .chipsWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
+  .suggestions {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: calc(100% - 16px); /* Considering padding of container */
+    margin-top: 4px;
+    z-index: 10;
+  }
+  
+  .suggestionItem {
+    padding: 8px;
+    cursor: pointer;
+  }
+  
+  .suggestionItem:hover,
+  .suggestionItemActive {
+    background-color: #f8f9fa;
+  }
+  
