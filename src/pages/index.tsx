@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import ChipsComponent from '../../components/ChipsComponent';
-
+import React from 'react';
 const Home: NextPage = () => {
   const items = [
     { name: 'Apple', email: 'apple@example.com' },
