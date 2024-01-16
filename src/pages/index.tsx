@@ -15,6 +15,7 @@ const Home: NextPage = () => {
 
   return (
     <div className="container mx-auto mt-10">
+      <h1 className='text-2xl mb-4'>Zepto Assignment</h1>
       <ChipsComponent items={items} />
     </div>
   );
