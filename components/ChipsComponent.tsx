@@ -31,7 +31,7 @@ const ChipsComponent: React.FC<ChipInputProps> = ({ items }) => {
 
   const updateSuggestedItems = (value: string) => {
     const newSuggestedItems = isInputFocused && !value ?
-      items.filter(item => !selectedItems.includes(item.name)) : // Show all items not selected
+      items.filter(item => !selectedItems.includes(item.name)) : 
       items.filter(item =>
         item.name.toLowerCase().includes(value.toLowerCase()) &&
         !selectedItems.includes(item.name)
@@ -83,7 +83,7 @@ const ChipsComponent: React.FC<ChipInputProps> = ({ items }) => {
   const handleItemSelect = (selectedItem: ChipItem) => {
     console.log("item clicked")
     setInputValue('');
-    setSelectedItems([...selectedItems, selectedItem.name]); // Update to use the name from the ChipItem
+    setSelectedItems([...selectedItems, selectedItem.name]); 
     setSuggestedItems(suggestedItems.filter((item) => item.name !== selectedItem.name));
     setIsInputFocused(false); 
   };
