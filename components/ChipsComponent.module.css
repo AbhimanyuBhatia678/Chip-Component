@@ -15,8 +15,8 @@
 }
 
 .chip {
-  background-color: #005eff;
-  color: white;
+  background-color: #eaecee;
+  color: black;
   margin-right: 8px;
   margin-bottom: 8px;
   border-radius: 16px;
@@ -36,7 +36,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: white;
+  color: black;
   margin-left: 8px;
   display: flex;
   align-items: center;
@@ -74,6 +74,18 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+  }
+
+  .avatar {
+    display: inline-block;
+    margin-right: 8px;
+  }
+  
+  .avatarImg {
+    width: 24px; /* adjust size as needed */
+    height: 24px; /* adjust size as needed */
+    border-radius: 50%; /* for circular shape */
+    object-fit: cover; /* for proper scaling */
   }
   
   .suggestions {

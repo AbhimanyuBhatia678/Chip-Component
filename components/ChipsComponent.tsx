@@ -4,6 +4,7 @@ import styles from './ChipsComponent.module.css';
 interface ChipItem {
   name: string;
   email: string;
+  avatar: string;
 }
 
 interface ChipInputProps {
@@ -105,26 +106,36 @@ const ChipsComponent: React.FC<ChipInputProps> = ({ items }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.chipContainer} onClick={() => inputRef.current?.focus()}>
-        {selectedItems.map((name, index) => (
-          <div
-            key={index}
-            className={`${styles.chip} ${
-              highlightedChip === index ? styles.chipHighlighted : ''
-            }`}
-        >
-          {name}
-          <button
-            type="button"
-            onClick={event => {
-              event.stopPropagation();
-              handleChipDelete(name);
-            }}
-            className={styles.chipButton}
-          >
-            &times;
-          </button>
-        </div>
-      ))}
+      {selectedItems.map((name, index) => {
+          const chipItem = items.find(item => item.name === name);
+          return (
+            <div
+              key={index}
+              className={`${styles.chip} ${
+                highlightedChip === index ? styles.chipHighlighted : ''
+              }`}
+            >
+              <span className={styles.avatar}>
+                <img
+                  src={chipItem?.avatar}
+                  alt={name}
+                  className={styles.avatarImg}
+                />
+              </span>
+              {name}
+              <button
+                type="button"
+                onClick={(event) => {
+                  event.stopPropagation();
+                  handleChipDelete(name);
+                }}
+                className={styles.chipButton}
+              >
+                &times;
+              </button>
+            </div>
+          );
+        })}
       <input
           ref={inputRef}
           type="text"
